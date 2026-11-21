@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://solarpowerng.github.io/Sied-Energy/sitemap.xml
