@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sied Energy provides professional solar panel installation, inverter systems, battery storage and solar maintenance for homes and businesses in Nigeria.">
+  <meta name="theme-color" content="#18212F">
+  <title>Sied Energy | Smart Solar & Power Solutions</title>
+  <style>
+    :root {
+      --ink: #18212F;
+      --ink-soft: #243247;
+      --orange: #F26B38;
+      --aqua: #31B7A5;
+      --paper: #F5F7F8;
+      --white: #FFFFFF;
+      --text: #293544;
+      --muted: #687586;
+      --line: #E2E8ED;
+      --shadow: 0 14px 38px rgba(24, 33, 47, .10);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.65; color: var(--text); background: var(--white); }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+    .container { width: min(1140px, 90%); margin: auto; }
+
+    header {
+      background: var(--white); padding: 14px 5%; display: flex;
+      justify-content: space-between; align-items: center; gap: 20px;
+      flex-wrap: wrap; border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 20;
+      box-shadow: 0 3px 15px rgba(24,33,47,.05);
+    }
+    .brand { display: flex; align-items: center; flex: 0 1 auto; }
+    .brand img { display: block; width: min(340px, 38vw); height: 76px; object-fit: contain; object-position: left center; }
+
+    nav { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; }
+    nav a { color: var(--ink); font-size: 14px; font-weight: 700; }
+    nav a:hover { color: var(--orange); }
+
+    .hero {
+      min-height: 590px; display: flex; align-items: center; color: white;
+      background:
+        linear-gradient(90deg, rgba(16,25,39,.94), rgba(16,25,39,.70) 55%, rgba(16,25,39,.18)),
+        url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1900&q=85') center 48% / cover no-repeat;
+      padding: 100px 0;
+    }
+    .hero-copy { max-width: 690px; }
+    .eyebrow { color: var(--aqua); text-transform: uppercase; letter-spacing: 2.4px; font-weight: 800; font-size: 12px; }
+    .hero h1 { font-size: clamp(38px, 5.5vw, 66px); line-height: 1.06; margin: 16px 0 20px; letter-spacing: -1.5px; }
+    .hero h1 span { color: var(--orange); }
+    .hero p { max-width: 590px; font-size: 18px; color: #E7EDF3; margin-bottom: 30px; }
+    .btn { display: inline-block; border: 0; border-radius: 6px; padding: 14px 23px; background: var(--orange); color: white; font-weight: 800; cursor: pointer; transition: .2s; }
+    .btn:hover { background: var(--aqua); color: var(--ink); }
+    .btn-outline { display: inline-block; border: 2px solid rgba(255,255,255,.8); border-radius: 6px; padding: 12px 21px; color: white; font-weight: 700; margin-left: 10px; }
+    .btn-outline:hover { background: white; color: var(--ink); }
+
+    section { padding: 78px 0; }
+    .section-heading { text-align: center; margin-bottom: 40px; }
+    .section-heading h2 { color: var(--ink); font-size: clamp(28px, 3.5vw, 38px); line-height: 1.2; }
+    .section-heading h2 span { color: var(--orange); }
+    .section-heading p { color: var(--muted); margin-top: 10px; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 20px; }
+    .service-card { background: white; padding: 27px 23px; border-radius: 12px; border: 1px solid var(--line); border-top: 4px solid var(--aqua); box-shadow: var(--shadow); transition: transform .2s; }
+    .service-card:hover { transform: translateY(-6px); }
+    .service-icon { font-size: 34px; margin-bottom: 12px; }
+    .service-card h3 { color: var(--ink); margin-bottom: 9px; font-size: 18px; }
+    .service-card p { color: var(--muted); font-size: 14px; }
+
+    .about { background: var(--paper); }
+    .about-layout { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 46px; }
+    .about-copy p { margin-bottom: 16px; }
+    .about-photo { width: 100%; height: 400px; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow); }
+    .about-tag { display: inline-block; margin-bottom: 14px; color: var(--orange); font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; }
+    .about-copy h2 { color: var(--ink); font-size: clamp(28px, 3.5vw, 38px); line-height: 1.2; margin-bottom: 18px; }
+    .about-copy h2 span { color: var(--orange); }
+
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 18px; }
+    .why-card { background: var(--paper); padding: 23px; border-radius: 10px; border-left: 4px solid var(--orange); }
+    .why-card h3 { color: var(--ink); font-size: 17px; margin-bottom: 7px; }
+    .why-card p { color: var(--muted); font-size: 14px; }
+
+    .gallery { background: #EEF3F5; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: stretch; }
+    .gallery-item { background: white; border-radius: 11px; overflow: hidden; box-shadow: 0 5px 18px rgba(24,33,47,.09); }
+    .gallery-item img { width: 100%; height: 290px; object-fit: cover; background: #DDE5E9; }
+    .gallery-item figcaption { padding: 13px 15px; color: var(--ink); font-weight: 800; font-size: 14px; }
+    .gallery-item.profile img { object-fit: contain; padding: 12px; background: white; }
+
+    .cta { background: var(--ink); color: white; text-align: center; }
+    .cta h2 { font-size: clamp(27px, 3.5vw, 38px); margin-bottom: 10px; }
+    .cta p { margin: 0 auto 24px; max-width: 680px; color: #D9E1E9; }
+
+    .contact-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 30px; max-width: 1030px; margin: auto; }
+    .contact-info { background: var(--ink); color: white; padding: 31px; border-radius: 12px; }
+    .contact-info h3 { color: var(--aqua); margin-bottom: 20px; font-size: 24px; }
+    .contact-info p { margin: 0 0 17px; overflow-wrap: anywhere; }
+    .contact-info a { color: white; }
+    .contact-info a:hover { color: var(--orange); }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      width: 100%; padding: 14px; margin-bottom: 14px; border: 1px solid #CBD4DD;
+      border-radius: 6px; font: inherit; background: white;
+    }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 2px solid var(--aqua); border-color: var(--aqua); }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .contact-form button { width: 100%; font-size: 15px; }
+    #formMessage { margin-top: 11px; color: #16836F; font-weight: 700; }
+
+    footer { background: #111925; color: white; text-align: center; padding: 38px 6% 22px; border-top: 5px solid var(--orange); }
+    footer h2 { margin-bottom: 7px; }
+    footer h2 span { color: var(--orange); }
+    footer p { margin: 7px 0; color: #D7DFE7; }
+    footer a { color: var(--aqua); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.18); margin-top: 23px; padding-top: 17px; font-size: 13px; color: #B9C4D0; }
+    .whatsapp-float { position: fixed; right: 18px; bottom: 18px; z-index: 30; background: #20C878; color: white; padding: 13px 18px; border-radius: 50px; font-weight: 800; box-shadow: 0 4px 14px rgba(0,0,0,.22); }
+
+    @media (max-width: 850px) {
+      header { justify-content: center; }
+      .brand img { width: min(340px, 82vw); height: 70px; object-position: center; }
+      nav { justify-content: center; gap: 14px; }
+      .about-layout, .contact-layout { grid-template-columns: 1fr; }
+      .about-photo { height: 340px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      header { padding: 13px 4%; }
+      nav { gap: 10px 14px; }
+      nav a { font-size: 13px; }
+      .hero { min-height: 520px; padding: 75px 0; background-position: 58% center; }
+      .hero p { font-size: 16px; }
+      .btn-outline { margin: 12px 0 0; }
+      section { padding: 58px 0; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item img { height: 280px; }
+      .whatsapp-float { right: 12px; bottom: 12px; padding: 11px 14px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="#home" aria-label="Sied Energy home">
+      <img src="images/sied-energy-logo.png" alt="Sied Energy — Clean Energy. A Brighter Future." width="340" height="76">
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-copy">
+        <div class="eyebrow">Reliable power. Smarter living.</div>
+        <h1>Powering Today.<br><span>Building Tomorrow.</span></h1>
+        <p>Sied Energy delivers practical solar, inverter and battery solutions for homes and businesses. We help you take control of your power with professional installation and dependable technical support.</p>
+        <a class="btn" href="#contact">Request an Installation Quote</a>
+        <a class="btn-outline" href="https://wa.me/2349032479837" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading"><h2>Our <span>Services</span></h2><p>Complete energy solutions, planned around your power needs.</p></div>
+        <div class="services-grid">
+          <article class="service-card"><div class="service-icon">☀️</div><h3>Solar Panel Installation</h3><p>Solar panel supply, mounting and installation for homes, offices and commercial properties.</p></article>
+          <article class="service-card"><div class="service-icon">⚡</div><h3>Inverter Systems</h3><p>Inverter selection, installation, configuration and backup power setup.</p></article>
+          <article class="service-card"><div class="service-icon">🔋</div><h3>Battery Solutions</h3><p>Battery installation and system configuration for dependable energy storage.</p></article>
+          <article class="service-card"><div class="service-icon">🧰</div><h3>Maintenance & Repairs</h3><p>System inspection, troubleshooting, servicing and technical maintenance.</p></article>
+          <article class="service-card"><div class="service-icon">📐</div><h3>Energy Assessment</h3><p>Guidance on system sizing and choosing equipment to suit your electricity needs.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-layout">
+        <div class="about-copy">
+          <span class="about-tag">Who we are</span>
+          <h2>About <span>Sied Energy</span></h2>
+          <p>Sied Energy is focused on delivering reliable solar and backup-power solutions to homes and businesses. We work to make clean energy practical through quality equipment, careful installation and customer-focused technical support.</p>
+          <p>From solar panels and inverter systems to battery storage and maintenance, our goal is to help customers enjoy a more dependable power supply.</p>
+          <p>We approach every project by considering the customer's energy requirements and recommending a solution that fits the job.</p>
+          <a class="btn" href="#contact">Talk to Our Team</a>
+        </div>
+        <img class="about-photo" src="https://images.unsplash.com/photo-1491617493415-7c6f6e3c7d3b?auto=format&fit=crop&w=1000&q=85" alt="Solar panels installed on a rooftop" loading="lazy">
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="container">
+        <div class="section-heading"><h2>Why Choose <span>Sied Energy?</span></h2><p>We put workmanship, practical solutions and customer support first.</p></div>
+        <div class="why-grid">
+          <article class="why-card"><h3>✓ Professional Workmanship</h3><p>Careful installation practices and attention to system setup.</p></article>
+          <article class="why-card"><h3>✓ Solutions for Your Needs</h3><p>Recommendations based on your appliances, usage and power requirements.</p></article>
+          <article class="why-card"><h3>✓ Quality Components</h3><p>Solar, inverter and battery options selected for the intended application.</p></article>
+          <article class="why-card"><h3>✓ Technical Support</h3><p>Help with system checks, maintenance and troubleshooting.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-heading"><h2>Our <span>Company Gallery</span></h2><p>Company profile and examples of solar and electrical technical work.</p></div>
+        <div class="gallery-grid">
+          <figure class="gallery-item profile">
+            <img src="images/sied-energy-company-profile.jpg" alt="Sied Energy company profile" loading="lazy">
+            <figcaption>Sied Energy Company Profile</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85" alt="Solar panels arranged on a rooftop" loading="lazy">
+            <figcaption>Solar Panel Installation</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=900&q=85" alt="Solar energy equipment and electrical installation" loading="lazy">
+            <figcaption>Solar System Equipment</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=85" alt="Technician carrying out solar installation work" loading="lazy">
+            <figcaption>Technical Installation Work</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1473341304170-971aacb042e8?auto=format&fit=crop&w=900&q=85" alt="Electrical power equipment and infrastructure" loading="lazy">
+            <figcaption>Power & Electrical Solutions</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Ready for More Reliable Power?</h2>
+        <p>Tell Sied Energy about your home or business power needs. We will be glad to discuss a suitable solar or inverter solution.</p>
+        <a class="btn" href="#contact">Get Started Today</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading"><h2>Contact <span>Sied Energy</span></h2><p>Send us your project details and request a quote.</p></div>
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h3>Let's Talk Energy</h3>
+            <p><strong>Phone / WhatsApp:</strong><br><a href="tel:+2349032479837">+234 903 247 9837</a></p>
+            <p><strong>Email:</strong><br><a href="mailto:sied3076@gmail.com">sied3076@gmail.com</a></p>
+            <p><strong>Location:</strong><br>Abuja, Nigeria</p>
+            <p><strong>Our focus:</strong><br>Solar installation, inverter systems, battery solutions and maintenance.</p>
+            <p><a href="https://wa.me/2349032479837" target="_blank" rel="noopener">Message us directly on WhatsApp →</a></p>
+          </div>
+          <form class="contact-form" id="quoteForm">
+            <input type="text" id="name" placeholder="Your Full Name" autocomplete="name" required>
+            <input type="tel" id="phone" placeholder="Your Phone Number" autocomplete="tel" required>
+            <input type="text" id="location" placeholder="Your Location" required>
+            <select id="service" required>
+              <option value="">Select a Service</option>
+              <option>Solar Panel Installation</option>
+              <option>Inverter Installation</option>
+              <option>Battery Installation</option>
+              <option>Maintenance & Repairs</option>
+              <option>Energy Assessment</option>
+            </select>
+            <textarea id="details" placeholder="Describe your installation or power needs" required></textarea>
+            <button type="submit" class="btn">Send Request on WhatsApp</button>
+            <p id="formMessage" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h2>Sied <span>Energy</span></h2>
+    <p>Reliable Energy. Brighter Possibilities.</p>
+    <p>Solar • Inverter • Battery • Technical Support</p>
+    <p>Phone: +234 903 247 9837</p>
+    <p>Email: <a href="mailto:sied3076@gmail.com">sied3076@gmail.com</a></p>
+    <p>Abuja, Nigeria</p>
+    <p><a href="https://wa.me/2349032479837" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p>
+    <div class="footer-bottom">© 2026 Sied Energy. All Rights Reserved.</div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/2349032479837" target="_blank" rel="noopener" aria-label="Chat with Sied Energy on WhatsApp">WhatsApp Us</a>
+
+  <script>
+    document.getElementById('quoteForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const businessNumber = '2349032479837';
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const location = document.getElementById('location').value.trim();
+      const service = document.getElementById('service').value;
+      const details = document.getElementById('details').value.trim();
+
+      const message =
+        'NEW SIED ENERGY SERVICE REQUEST\n\n' +
+        'Customer Name: ' + name + '\n' +
+        'Phone Number: ' + phone + '\n' +
+        'Location: ' + location + '\n' +
+        'Service Required: ' + service + '\n' +
+        'Project Details: ' + details;
+
+      const whatsappURL = 'https://wa.me/' + businessNumber + '?text=' + encodeURIComponent(message);
+      const newWindow = window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+      document.getElementById('formMessage').textContent =
+        newWindow ? 'Your request has been prepared in WhatsApp. Please press Send to complete it.' :
+        'Please allow pop-ups, or use the WhatsApp button to send your request.';
+    });
+  </script>
+</body>
+</html>
